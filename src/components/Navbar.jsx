@@ -10,7 +10,7 @@ const Navbar = () => {
         </a>
       </div>
       <div className="nav__mode">
-        <i class="fas fa-moon"></i>
+        <i className="fas fa-moon"></i>
         <p>Dark Mode</p>
       </div>
     </nav>

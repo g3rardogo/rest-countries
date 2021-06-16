@@ -1,0 +1,15 @@
+@import '../_breakpoints.scss';
+
+.countries__container {
+    display: grid;
+    text-align: center;
+    @include media(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include media(desktop-s) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include media(desktop-l) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
