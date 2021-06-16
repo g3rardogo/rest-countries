@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import AppContext from "../context/AppContext";
 import "../styles/CountryDetails.scss";
@@ -8,6 +9,7 @@ const CountryDetailsContainer = (props) => {
   const { countryDetail } = useContext(AppContext);
   const countryName = props.match.params.countryName;
   const { details } = useContext(AppContext);
+  const { information, languages, borderCountries } = details;
 
   useEffect(async () => {
     await countryDetail(countryName);
@@ -15,7 +17,7 @@ const CountryDetailsContainer = (props) => {
 
   return (
     <>
-      {details.map((country) => (
+      {information.map((country) => (
         <div className="country__container" key={country.name}>
           <div className="back__container">
             <button
@@ -23,7 +25,7 @@ const CountryDetailsContainer = (props) => {
                 history.goBack();
               }}
             >
-              <i class="fas fa-arrow-left"></i>
+              <i className="fas fa-arrow-left"></i>
               Back
             </button>
           </div>
@@ -67,12 +69,19 @@ const CountryDetailsContainer = (props) => {
                   </p>
                   <p>
                     <strong>Languages: </strong>
+                    {languages.join(", ")}
                   </p>
                 </div>
               </div>
               <div className="borders__container">
                 <h3>Border Countries:</h3>
-                <p className="not-found">Border Countries</p>
+                {borderCountries.map((border) => {
+                  return (
+                    <Link key={border} to={`/${border}`}>
+                      <button>{border}</button>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
