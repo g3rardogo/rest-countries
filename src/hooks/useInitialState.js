@@ -1,23 +1,32 @@
 import { useEffect, useState } from "react";
-import initialState from "../../initialState";
 import api from "../api";
 
 const useInitialState = () => {
-  const [state, setState] = useState(initialState);
+  const [countries, setCountries] = useState([]);
+  const [details, setDetails] = useState([]);
 
   useEffect(async () => {
     try {
       const data = await api.countries.list();
-      setState({
-        countries: data,
-      });
+      setCountries(data);
     } catch (error) {
       console.log(`Error ${error}`);
     }
   }, []);
 
+  const countryDetail = async (country) => {
+    try {
+      const data = await api.countries.read(country);
+      setDetails(data);
+    } catch (error) {
+      console.log(`Error ${error}`);
+    }
+  };
+
   return {
-    state,
+    countries,
+    details,
+    countryDetail,
   };
 };
 

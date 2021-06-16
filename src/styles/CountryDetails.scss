@@ -1,0 +1,87 @@
+@import './Mixins';
+@import './breakpoints';
+
+.country__container {
+    padding: 30px 15px;
+    .back__container {
+        margin-bottom: 54px;
+        button {
+            @include primary-button;
+            i {
+                margin-right: 14px;
+            }
+        }
+    }
+    .info__container {
+        @include media(desktop-s) {
+            display: flex;
+        }
+    }
+
+    .flag__container {
+        @include media(desktop-s) {
+            min-width: 450px;
+            max-width: 450px;
+        }
+        img {
+            width: 100%;
+            @include media(desktop-s) {
+                min-height: 322px;
+                max-height: 322px;
+            }
+        }
+    }
+
+    .details__container {
+        @include media(desktop-s) {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            margin-left: 64px;   
+        }
+    }
+
+    .wrapper {
+        @include media(desktop-s) {
+            grid-row: 1 / 2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .description__container {
+        margin-top: 46px;
+        h2 {
+            margin-bottom: 24px;
+        }
+        @include media(desktop-s) {
+            margin-top: 0;
+        }
+    }
+
+    .description__container:nth-child(2) {
+        margin-top: 56px;
+    }
+
+    .borders__container {
+        margin-top: 46px;
+        @include media(desktop-s) {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            grid-row: 2 / 3;
+            margin-top: 0;
+        }
+        h3 {
+            @include media(desktop-s) {
+                margin-right: 18px
+            }
+        }
+        button {
+            @include primary-button;
+        }
+
+        .not-found {
+            line-height: 1.9rem;
+        }
+    }
+}
