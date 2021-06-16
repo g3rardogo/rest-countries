@@ -1,5 +1,7 @@
 import React from "react";
+import "../styles/Global.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Layout from "../components/Layout";
 import Home from "../containers/Home";
 import AppContext from "../context/AppContext";
 import useInitialState from "../hooks/useInitialState";
@@ -12,9 +14,11 @@ const App = () => {
       {isEmpty > 0 ? (
         <AppContext.Provider value={initialState}>
           <BrowserRouter>
-            <Switch>
-              <Route exact path="/" component={Home} />
-            </Switch>
+            <Layout>
+              <Switch>
+                <Route exact path="/" component={Home} />
+              </Switch>
+            </Layout>
           </BrowserRouter>
         </AppContext.Provider>
       ) : (

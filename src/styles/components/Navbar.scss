@@ -1,0 +1,21 @@
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 15px;
+    box-shadow: black 1px 0px 6px -3px;
+    .nav__title {
+        font-weight: 800;
+    }
+    .nav__mode {
+        display: flex;
+        i {
+            transform: rotate(335deg);
+            margin-top: 3px;
+        }
+        p {
+            margin-left: 8px;
+            font-weight: 600;
+        }
+    }
+}
