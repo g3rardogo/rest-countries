@@ -1,0 +1,11 @@
+@import '../Mixins';
+@import '../breakpoints';
+
+.regions-select {
+    margin-top: 36px;
+    max-width: 200px;
+    @include box-style;
+    @include media(tablet) {
+        display: inline-block;
+    }
+}

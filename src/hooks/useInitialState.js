@@ -61,12 +61,22 @@ const useInitialState = () => {
     return { query, setQuery };
   };
 
+  const searchByRegion = async (region) => {
+    try {
+      const countries = await api.countries.listRegion(region);
+      setFilteredCountries(countries);
+    } catch (error) {
+      console.log(`Error ${error}`);
+    }
+  };
+
   return {
     countries,
     filteredCountries,
     details,
     countryDetail,
     searchCountries,
+    searchByRegion,
   };
 };
 
