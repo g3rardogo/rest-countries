@@ -1,0 +1,11 @@
+@import '../Mixins.scss';
+@import '../breakpoints.scss';
+
+.search-input {
+    position: relative;
+    max-width: 425px;
+    @include box-style;
+    @include media(tablet) {
+        display: inline-block;
+    }
+}

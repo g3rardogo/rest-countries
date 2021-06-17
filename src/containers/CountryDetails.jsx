@@ -6,9 +6,8 @@ import "../styles/CountryDetails.scss";
 
 const CountryDetailsContainer = (props) => {
   const history = useHistory();
-  const { countryDetail } = useContext(AppContext);
+  const { countryDetail, details } = useContext(AppContext);
   const countryName = props.match.params.countryName;
-  const { details } = useContext(AppContext);
   const { information, languages, borderCountries } = details;
 
   useEffect(async () => {

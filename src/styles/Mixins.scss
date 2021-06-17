@@ -10,3 +10,10 @@
         margin: 0 10px 14px 0;
     }
 }
+
+@mixin box-style {
+    padding: 16px;
+    border: none;
+    box-shadow: black 0 0 4px -1px;
+    border-radius: 5px;
+}

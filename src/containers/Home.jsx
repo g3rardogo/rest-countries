@@ -1,8 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import CountriesList from "../components/CountriesList";
+import SearchInput from "../components/SearchInput";
 import "../styles/Home.scss";
+
 const App = () => {
-  return <CountriesList />;
+  return (
+    <>
+      <SearchInput />
+      <CountriesList />
+    </>
+  );
 };
 
 export default App;

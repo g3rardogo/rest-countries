@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import api from "../api";
 
 const useInitialState = () => {
   const [countries, setCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState([]);
   const [details, setDetails] = useState({
     information: [],
     languages: [],
@@ -13,6 +14,7 @@ const useInitialState = () => {
     try {
       const data = await api.countries.list();
       setCountries(data);
+      setFilteredCountries(data);
     } catch (error) {
       console.log(`Error ${error}`);
     }
@@ -48,10 +50,23 @@ const useInitialState = () => {
     }
   };
 
+  const searchCountries = (countries) => {
+    const [query, setQuery] = React.useState("");
+    React.useMemo(() => {
+      const result = countries.filter((country) => {
+        return `${country.name}`.toLowerCase().includes(query.toLowerCase());
+      });
+      setFilteredCountries(result);
+    }, [query]);
+    return { query, setQuery };
+  };
+
   return {
     countries,
+    filteredCountries,
     details,
     countryDetail,
+    searchCountries,
   };
 };
 

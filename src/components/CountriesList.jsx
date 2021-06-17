@@ -5,10 +5,10 @@ import CountryCard from "./CountryCard";
 import "../styles/components/CountriesList.scss";
 
 const CountriesList = () => {
-  const { countries } = useContext(AppContext);
+  const { filteredCountries } = useContext(AppContext);
   return (
     <div className="countries__container">
-      {countries.map((country) => {
+      {filteredCountries.map((country) => {
         return (
           <Link key={country.name} to={`/${country.name}`}>
             <CountryCard country={country} />
