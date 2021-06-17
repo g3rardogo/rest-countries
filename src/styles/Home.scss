@@ -1,5 +1,23 @@
 @import './breakpoints.scss';
 
+.filter-countries__container {
+    @media(min-width: 525px) {
+        display: flex;
+        align-items: center;
+    }
+    .search__container {
+        @media(min-width: 525px) {
+            width: 60%;
+            max-width: 580px;
+        }
+    }
+    .filter__container {
+        @media(min-width: 525px) {
+            margin-left: auto;
+        }
+    }
+
+}
 main {
     display: flex;
     flex-direction: column;

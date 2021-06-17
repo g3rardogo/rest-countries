@@ -1,10 +1,11 @@
-@import '../_breakpoints.scss';
+@import '../breakpoints.scss';
 
 .countries__container {
     display: grid;
     text-align: center;
     @include media(tablet) {
         grid-template-columns: repeat(2, 1fr);
+        column-gap: 24px;
     }
     @include media(desktop-s) {
         grid-template-columns: repeat(3, 1fr);

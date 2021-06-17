@@ -3,15 +3,14 @@
 .card__container {
     margin-top: 46px;
     width: 100%;
-    max-height: 457px;
     border: none;
     box-shadow: grey 0 0 2px;
     border-radius: 5px;
     text-align: left;
     @include media(tablet) {
-        width: 90%;
+        width: 100%;
+        max-height: 457px;
         display: inline-block;
-        margin: 46px 10px 0 10px;
     }
     .flag__container {
         img {
@@ -19,9 +18,13 @@
             object-fit: cover;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px ;
-            @include media(desktop-s) {
+            @include media(tablet) {
                 min-height: 237px;
                 max-height: 237px;
+            }
+            @include media(desktop-l) {
+                min-height: 260px;
+                max-height: 260px;
             }
         }
     }

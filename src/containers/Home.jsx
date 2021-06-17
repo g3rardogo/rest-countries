@@ -6,11 +6,17 @@ import "../styles/Home.scss";
 
 const App = () => {
   return (
-    <>
-      <SearchInput />
-      <FilterSelect />
+    <main>
+      <div className="filter-countries__container">
+        <div className="search__container">
+          <SearchInput />
+        </div>
+        <div className="filter__container">
+          <FilterSelect />
+        </div>
+      </div>
       <CountriesList />
-    </>
+    </main>
   );
 };
 

@@ -2,10 +2,7 @@
 @import '../breakpoints.scss';
 
 .search-input {
+    width: 100%;
     position: relative;
-    max-width: 425px;
     @include box-style;
-    @include media(tablet) {
-        display: inline-block;
-    }
 }
