@@ -9,7 +9,7 @@ const CountryDetailsContainer = (props) => {
   const history = useHistory();
   const { countryDetail, details } = useContext(AppContext);
   const countryName = props.match.params.countryName;
-  const { information, languages, borderCountries } = details;
+  const { information, languages, currencies, borderCountries } = details;
 
   useEffect(async () => {
     await countryDetail(countryName);
@@ -65,7 +65,11 @@ const CountryDetailsContainer = (props) => {
                   </p>
                   <p>
                     <strong>Currencies: </strong>
-                    {country.name}
+                    {currencies.length > 0 ? (
+                      currencies.join(", ")
+                    ) : (
+                      <p>Currencies Not Found</p>
+                    )}
                   </p>
                   <p>
                     <strong>Languages: </strong>

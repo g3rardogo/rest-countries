@@ -7,6 +7,7 @@ const useInitialState = () => {
   const [details, setDetails] = useState({
     information: [],
     languages: [],
+    currencies: [],
     borderCountries: [],
   });
 
@@ -24,29 +25,40 @@ const useInitialState = () => {
     try {
       const data = await api.countries.read(country);
       const languages = [];
+      const currencies = [];
       const borderCountries = [];
       const borderCountriesNames = [];
 
       data[0].languages.map((language) => {
         languages.push(language.name);
       });
-      data[0].borders.length > 0
-        ? data[0].borders.map((border) => {
-            borderCountries.push(border.toLowerCase());
-          })
-        : borderCountriesNames.push("Not Found");
 
-      for (const border in borderCountries) {
-        const country = await api.countries.readAlpha(borderCountries[border]);
-        borderCountriesNames.push(country.name);
+      if (data[0].borders.length > 0) {
+        data[0].borders.map((border) => {
+          borderCountries.push(border.toLowerCase());
+        });
+        for (const border in borderCountries) {
+          const country = await api.countries.readAlpha(
+            borderCountries[border]
+          );
+          borderCountriesNames.push(country.name);
+        }
+      } else {
+        borderCountriesNames.push("Not Found");
       }
+
+      data[0].currencies.map((currency) => {
+        currencies.push(currency.name);
+      });
+
       setDetails({
         information: data,
         languages: languages,
+        currencies: currencies,
         borderCountries: borderCountriesNames,
       });
     } catch (error) {
-      console.log(`Error ${error}`);
+      console.log("Country Not Found");
     }
   };
 
