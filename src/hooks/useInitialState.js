@@ -30,16 +30,16 @@ const useInitialState = () => {
       data[0].languages.map((language) => {
         languages.push(language.name);
       });
-
-      data[0].borders.map((border) => {
-        borderCountries.push(border.toLowerCase());
-      });
+      data[0].borders.length > 0
+        ? data[0].borders.map((border) => {
+            borderCountries.push(border.toLowerCase());
+          })
+        : borderCountriesNames.push("Not Found");
 
       for (const border in borderCountries) {
         const country = await api.countries.readAlpha(borderCountries[border]);
         borderCountriesNames.push(country.name);
       }
-
       setDetails({
         information: data,
         languages: languages,

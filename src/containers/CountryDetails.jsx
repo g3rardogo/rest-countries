@@ -75,13 +75,17 @@ const CountryDetailsContainer = (props) => {
               </div>
               <div className="borders__container">
                 <h3>Border Countries:</h3>
-                {borderCountries.map((border) => {
-                  return (
-                    <Link key={border} to={`/${border}`}>
-                      <button>{border}</button>
-                    </Link>
-                  );
-                })}
+                {borderCountries == "Not Found" ? (
+                  <p>Borders Not Found</p>
+                ) : (
+                  borderCountries.map((border) => {
+                    return (
+                      <Link key={border} to={`/${border}`}>
+                        <button>{border}</button>
+                      </Link>
+                    );
+                  })
+                )}
               </div>
             </div>
           </div>
