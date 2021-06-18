@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import AppContext from "../context/AppContext";
+import formatter from "../utils/formatter";
 import "../styles/CountryDetails.scss";
 
 const CountryDetailsContainer = (props) => {
@@ -42,7 +43,7 @@ const CountryDetailsContainer = (props) => {
                   </p>
                   <p>
                     <strong>Population: </strong>
-                    {country.population}
+                    {formatter.format(country.population)}
                   </p>
                   <p>
                     <strong>Region: </strong>

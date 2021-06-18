@@ -1,4 +1,5 @@
 import React from "react";
+import formatter from "../utils/formatter";
 import "../styles/components/CountryCard.scss";
 
 const CountryCard = ({ country }) => {
@@ -11,7 +12,7 @@ const CountryCard = ({ country }) => {
         <h3>{country.name}</h3>
         <p>
           <strong>Population: </strong>
-          {country.population}
+          {formatter.format(country.population)}
         </p>
         <p>
           <strong>Region: </strong>
