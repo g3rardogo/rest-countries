@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Layout from "../components/Layout";
 import Home from "../containers/Home";
 import CountryDetails from "../containers/CountryDetails";
+import NotFound from "../containers/NotFound";
 import AppContext from "../context/AppContext";
 import useInitialState from "../hooks/useInitialState";
 
@@ -18,7 +19,7 @@ const App = () => {
               <Route exact path="/" component={Home} />
               <Route
                 exact
-                path="/:countryName"
+                path="/details/:countryName"
                 render={(props) => (
                   <CountryDetails
                     key={props.match.params.countryName}
@@ -26,6 +27,7 @@ const App = () => {
                   />
                 )}
               />
+              <Route component={NotFound} />
             </Switch>
           </Layout>
         </BrowserRouter>

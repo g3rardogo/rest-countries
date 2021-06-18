@@ -80,7 +80,7 @@ const CountryDetailsContainer = (props) => {
                 ) : (
                   borderCountries.map((border) => {
                     return (
-                      <Link key={border} to={`/${border}`}>
+                      <Link key={border} to={`/details/${border}`}>
                         <button>{border}</button>
                       </Link>
                     );

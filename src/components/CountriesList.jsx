@@ -10,7 +10,7 @@ const CountriesList = () => {
     <div className="countries__container">
       {filteredCountries.map((country) => {
         return (
-          <Link key={country.name} to={`/${country.name}`}>
+          <Link key={country.name} to={`/details/${country.name}`}>
             <CountryCard country={country} />
           </Link>
         );
