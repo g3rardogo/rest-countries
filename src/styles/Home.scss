@@ -7,12 +7,14 @@
     }
     .search__container {
         @media(min-width: 525px) {
-            width: 60%;
+            width: 55%;
             max-width: 580px;
         }
     }
     .filter__container {
         @media(min-width: 525px) {
+            width: 40%;
+            max-width: 210px;
             margin-left: auto;
         }
     }
@@ -20,6 +22,7 @@
 }
 
 main {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../api";
 
 const useInitialState = () => {
+  const [loading, setLoading] = useState(true);
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [details, setDetails] = useState({
@@ -16,6 +17,7 @@ const useInitialState = () => {
       const data = await api.countries.list();
       setCountries(data);
       setFilteredCountries(data);
+      setLoading(false);
     } catch (error) {
       console.log(`Error ${error}`);
     }
@@ -75,7 +77,9 @@ const useInitialState = () => {
 
   const searchByRegion = async (region) => {
     try {
+      setLoading(true);
       const countries = await api.countries.listRegion(region);
+      setLoading(false);
       setFilteredCountries(countries);
     } catch (error) {
       console.log(`Error ${error}`);
@@ -87,6 +91,7 @@ const useInitialState = () => {
     filteredCountries,
     details,
     countryDetail,
+    loading,
     searchCountries,
     searchByRegion,
   };
