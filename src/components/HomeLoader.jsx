@@ -5,7 +5,7 @@ import "../styles/components/CountriesList.scss";
 import "../styles/components/CountryCard.scss";
 import "../styles/components/FilterSelect.scss";
 import "../styles/components/SearchInput.scss";
-import CardLoader from "./CardLoader";
+import CountryCardLoader from "./CountryCardLoader";
 
 const HomeLoader = () => {
   return (
@@ -19,14 +19,14 @@ const HomeLoader = () => {
         </div>
       </div>
       <div className="countries__container">
-        <CardLoader />
-        <CardLoader />
-        <CardLoader />
-        <CardLoader />
-        <CardLoader />
-        <CardLoader />
-        <CardLoader />
-        <CardLoader />
+        <CountryCardLoader />
+        <CountryCardLoader />
+        <CountryCardLoader />
+        <CountryCardLoader />
+        <CountryCardLoader />
+        <CountryCardLoader />
+        <CountryCardLoader />
+        <CountryCardLoader />
       </div>
     </main>
   );

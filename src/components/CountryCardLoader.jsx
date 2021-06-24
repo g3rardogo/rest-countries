@@ -6,7 +6,7 @@ const CardLoader = () => {
   return (
     <div className="card__container">
       <div className="flag__container">
-        <img src="" alt="" />
+        <Skeleton className="flag-image--skeleton" />
       </div>
       <div className="info__container">
         <h3>

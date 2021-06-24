@@ -25,6 +25,7 @@ const useInitialState = () => {
 
   const countryDetail = async (country) => {
     try {
+      setLoading(true);
       const data = await api.countries.read(country);
       const languages = [];
       const currencies = [];
@@ -59,6 +60,7 @@ const useInitialState = () => {
         currencies: currencies,
         borderCountries: borderCountriesNames,
       });
+      setLoading(false);
     } catch (error) {
       console.log("Country Not Found");
     }

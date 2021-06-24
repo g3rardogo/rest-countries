@@ -27,6 +27,31 @@
                 max-height: 260px;
             }
         }
+
+        .flag-image--skeleton {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px ;
+            @include media(mobile-l) {
+                height: 260px;
+            }
+            @media(min-width: 600px) {
+                height: 380px;
+            }
+            @media(min-width: 730px) {
+                height: 466px;
+            }
+            @include media(tablet) {
+                min-height: 237px;
+                max-height: 237px;
+            }
+            @include media(desktop-l) {
+                min-height: 260px;
+                max-height: 260px;
+            }
+        }
     }
     .info__container {
         padding: 0 24px;
