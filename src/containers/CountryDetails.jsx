@@ -4,13 +4,13 @@ import { useHistory } from "react-router-dom";
 import AppContext from "../context/AppContext";
 import formatter from "../utils/formatter";
 import NotFound from "./NotFound";
-import "../styles/CountryDetails.scss";
 import CountryDetailsLoader from "../components/CountryDetailsLoader";
+import "../styles/CountryDetails.scss";
 
 const CountryDetailsContainer = (props) => {
   const history = useHistory();
   const countryName = props.match.params.countryName;
-  const { loading, countryDetail, details } = useContext(AppContext);
+  const { loading, darkMode, countryDetail, details } = useContext(AppContext);
   const { information, languages, currencies, borderCountries } = details;
   console.log(loading);
 
@@ -23,11 +23,20 @@ const CountryDetailsContainer = (props) => {
   } else {
     if (information.length > 0) {
       return (
-        <>
+        <main
+          className={
+            darkMode
+              ? "main-detail__container dark-mode--background"
+              : "main-detail__container light-mode--background"
+          }
+        >
           {information.map((country) => (
             <div className="country__container" key={country.name}>
               <div className="back__container">
                 <button
+                  className={
+                    darkMode ? "dark-mode--element" : "light-mode--element"
+                  }
                   onClick={() => {
                     history.goBack();
                   }}
@@ -92,7 +101,15 @@ const CountryDetailsContainer = (props) => {
                       borderCountries.map((border) => {
                         return (
                           <Link key={border} to={`/details/${border}`}>
-                            <button>{border}</button>
+                            <button
+                              className={
+                                darkMode
+                                  ? "dark-mode--element"
+                                  : "light-mode--element"
+                              }
+                            >
+                              {border}
+                            </button>
                           </Link>
                         );
                       })
@@ -102,7 +119,7 @@ const CountryDetailsContainer = (props) => {
               </div>
             </div>
           ))}
-        </>
+        </main>
       );
     } else {
       return <NotFound />;

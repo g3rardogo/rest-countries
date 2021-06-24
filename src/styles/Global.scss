@@ -13,3 +13,24 @@ a:hover {
 body {
     font-family: 'Nunito Sans', sans-serif;
 }
+
+.light-mode--background {
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(200, 15%, 8%);
+}
+
+.dark-mode--background {
+    min-height: 100vh;
+    background-color: hsl(207, 26%, 17%);
+    color: hsl(0, 0%, 100%);
+}
+
+.light-mode--element {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(200, 15%, 8%);
+}
+
+.dark-mode--element {
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 100%);
+}

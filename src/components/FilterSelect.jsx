@@ -1,14 +1,17 @@
 import React, { useContext } from "react";
-import "../styles/components/FilterSelect.scss";
-import useInitialState from "../hooks/useInitialState";
 import AppContext from "../context/AppContext";
+import "../styles/components/FilterSelect.scss";
 
 const FilterSelect = () => {
-  const { searchByRegion } = useContext(AppContext);
+  const { darkMode, searchByRegion } = useContext(AppContext);
   return (
     <>
       <select
-        className="regions-select"
+        className={
+          darkMode
+            ? "regions-select dark-mode--element"
+            : "regions-select light-mode--element"
+        }
         defaultValue={"DEFAULT"}
         onChange={(e) => searchByRegion(e.target.value)}
       >

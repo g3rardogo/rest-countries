@@ -3,6 +3,7 @@ import api from "../api";
 
 const useInitialState = () => {
   const [loading, setLoading] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [details, setDetails] = useState({
@@ -94,6 +95,8 @@ const useInitialState = () => {
     details,
     countryDetail,
     loading,
+    darkMode,
+    setDarkMode,
     searchCountries,
     searchByRegion,
   };

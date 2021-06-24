@@ -7,12 +7,16 @@ import HomeLoader from "../components/HomeLoader";
 import "../styles/Home.scss";
 
 const Home = () => {
-  const { loading } = useContext(AppContext);
+  const { loading, darkMode } = useContext(AppContext);
   if (loading) {
     return <HomeLoader />;
   } else {
     return (
-      <main>
+      <main
+        className={
+          darkMode ? "dark-mode--background" : "light-mode--background"
+        }
+      >
         <div className="filter-countries__container">
           <div className="search__container">
             <SearchInput />

@@ -2,7 +2,10 @@
 @import '../breakpoints.scss';
 
 .search-input {
-    width: 100%;
     position: relative;
+    width: 100%;
     @include box-style;
+}
+.dark-mode--element::placeholder {
+    color: hsl(0, 0%, 100%);
 }

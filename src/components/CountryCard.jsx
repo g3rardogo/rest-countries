@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import formatter from "../utils/formatter";
 import "../styles/components/CountryCard.scss";
+import AppContext from "../context/AppContext";
 
 const CountryCard = ({ country }) => {
+  const { darkMode } = useContext(AppContext);
   return (
-    <div className="card__container">
+    <div
+      className={
+        darkMode
+          ? "card__container dark-mode--element"
+          : "card__container light-mode--element"
+      }
+    >
       <div className="flag__container">
         <img src={country.flag} alt={`${country.name} Flag`} />
       </div>

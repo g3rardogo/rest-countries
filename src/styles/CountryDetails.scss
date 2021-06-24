@@ -1,6 +1,9 @@
 @import './Mixins';
 @import './breakpoints';
 
+.main-detail__container {
+    height: 100vh;
+}
 .country__container {
     padding: 30px 15px;
     .back__container {
