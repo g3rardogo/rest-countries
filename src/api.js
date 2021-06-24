@@ -12,7 +12,7 @@ const api = {
       return callApi("/all");
     },
     read(countryName) {
-      return callApi(`/name/${countryName}`);
+      return callApi(`/name/${countryName}?fullText=true`);
     },
     readAlpha(alphaCode) {
       return callApi(`/alpha/${alphaCode}`);
