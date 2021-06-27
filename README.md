@@ -70,7 +70,7 @@ const searchCountries = (countries) => {
 
 ### Continued development
 
-I would like to improve the use of React Hooks and the performance and SEO of the react application. Also I
+I would like to improve the use of React Hooks and the performance and SEO of the react application. Also I'd prefer make the application a Progressive Web App in the future.
 
 ### Useful resources
 
