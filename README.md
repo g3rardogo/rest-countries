@@ -32,21 +32,23 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: 🚧 In Progress
+- Solution URL: 👨‍💻 [Here](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-PmUs-jEZU)
 - Live Site URL: 📌 [Here](https://rest-countries-g3rardogo.netlify.app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [Git](https://git-scm.com/) - Version control system
-- [React](https://reactjs.org/) - JS library
-- [Sass](https://sass-lang.com/) - CSS preprocesor
+- Semantic HTML5 markup.
+- CSS custom properties.
+- Flexbox.
+- CSS Grid.
+- Mobile-first workflow.
+- [React and React Hooks](https://reactjs.org/) - JS library.
+- [Git](https://git-scm.com/) - Version control system.
+- [Sass](https://sass-lang.com/) - CSS preprocessor.
+- [Webpack](https://webpack.js.org/) - Module bundler.
+- [Netlify](https://www.netlify.com/) - Deploy project.
 
 ### What I learned
 
@@ -54,28 +56,28 @@ This is my first project using React and what I learned from it is to using Reac
 
 ```js
 //Search country Hook
-function useSearchCountries(countries) {
+const searchCountries = (countries) => {
   const [query, setQuery] = React.useState("");
-  const [filteredCountries, setFilteredCountries] = React.useState(countries);
   React.useMemo(() => {
     const result = countries.filter((country) => {
       return `${country.name}`.toLowerCase().includes(query.toLowerCase());
     });
     setFilteredCountries(result);
-  }, [countries, query]);
-  return { query, setQuery, filteredCountries };
-}
+  }, [query]);
+  return { query, setQuery };
+};
 ```
 
 ### Continued development
 
-I would like to start learning more about React Hooks and then apply them in all the components
+I would like to improve the use of React Hooks and the performance and SEO of the react application. Also I
 
 ### Useful resources
 
 - [React for Beginners](https://dev.to/reedbarger/react-for-beginners-the-complete-guide-for-2021-55nj) - This helped me for start building React applications
+- [Develop a powerful React app by using Hooks.](https://www.kpiteng.com/blogs/react-hooks/) - Great article if you're a beginner with React Hooks.
 - [Using React with the History API](https://www.pluralsight.com/guides/using-react-with-the-history-api) - Understanding of how the history API works while making use of the React router package.
-- [React Skeleton Screens Tutotrial](https://youtube.com/playlist?list=PL4cUxeGkcC9i6bZhMuAzQpC6YgLmB4k4-) - An easy way how to do a skeleton loading with React. I really liked this package and will use it going forward.
+- [React Skeleton Screen Tutorial](https://www.youtube.com/watch?v=QhkTxdLxeds) - An easy way how to do a skeleton loading with React. I really liked this [package](https://www.npmjs.com/package/react-loading-skeleton) and will use it going forward.
 
 ## Author
 

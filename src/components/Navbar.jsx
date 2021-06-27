@@ -5,7 +5,6 @@ import "../styles/components/Navbar.scss";
 
 const Navbar = () => {
   const { darkMode, setDarkMode } = useContext(AppContext);
-  console.log(darkMode);
 
   const handleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -24,7 +23,9 @@ const Navbar = () => {
       </div>
       <div className="nav__mode">
         <i className="fas fa-moon"></i>
-        <p onClick={() => handleDarkMode()}>Dark Mode</p>
+        <p onClick={() => handleDarkMode()}>
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </p>
       </div>
     </nav>
   );

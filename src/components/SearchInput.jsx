@@ -17,9 +17,7 @@ const SearchInput = () => {
         }
         placeholder={"Search for a country..."}
         value={query}
-        onChange={(e) => {
-          setQuery(e.target.value);
-        }}
+        onChange={(e) => setQuery(e.target.value)}
       />
     </>
   );
